@@ -58,118 +58,6 @@ $(document).ready(function(){
         var text = $(this).attr('value'); 
         userAnswer.splice(0,1, text)
         console.log(userAnswer)
-    });
-    function checkAns(){
-        if(userAnswer==Ans1){
-            score = 10
-            console.log(score)
-        }
-        else if (userAnswer==Ans2){
-            score +=10
-            console.log(score)
-        }
-        else if (userAnswer==Ans3){
-            score +=10
-            console.log(score)
-        }
-        else if (userAnswer==Ans4){
-            score +=10
-            console.log(score)
-        }
-        else if (userAnswer==Ans5){
-            score +=10
-            console.log(score)
-        }
-        else if (userAnswer==Ans6){
-            score +=10
-            console.log(score)
-        }
-        else if (userAnswer==Ans7){
-            score +=10
-            console.log(score)
-        }
-        else if (userAnswer==Ans8){
-            score +=10        
-            console.log(score)    
-        }
-        else if (userAnswer==Ans9){
-            score +=10;
-            console.log(score)
-        }
-        else if(userAnswer==Ans10){
-            score+=10;
-            console.log(score)
-            
-        }
-        
-    };
-    $("#nextQ").on("click", function (){
-        if (!q1Ans){
-            $("#Q1").hide();
-            q1Ans = true;
-            q2Ans = false;
-            $("#Q2").show();
-            
-        }
-        else if (!q2Ans){
-            $("#Q2").hide()
-            q2Ans = true;
-            q3Ans = false;
-            $("#Q3").show()
-            
-        }
-        else if (!q3Ans){
-            $("#Q3").hide()
-            q3Ans = true;
-            q4Ans = false;
-            $("#Q4").show()
-            
-        }
-        else if (!q4Ans){
-            $("#Q4").hide()
-            q4Ans = true;
-            q5Ans = false;
-            $("#Q5").show()
-            
-        }
-        else if (!q5Ans){
-            $("#Q5").hide()
-            q5Ans=true;
-            q6Ans = false;
-            $("#Q6").show()
-            
-        }
-        else if (!q6Ans){
-            $("#Q6").hide()
-            q6Ans = true;
-            q7Ans = false;
-            $("#Q7").show()
-            
-        }
-        else if (!q7Ans){
-            $("#Q7").hide()
-            q7Ans = true;
-            q8Ans = false;
-            $("#Q8").show()
-            
-        }
-        else if (!q8Ans){
-            $("#Q8").hide()
-            q8Ans = true;
-            q9Ans = false;
-            $("#Q9").show()
-            
-        }
-        else if (!q9Ans){
-            $("#Q9").hide()
-            q9Ans = true;
-            q10Ans = false;
-            $("#Q10").show()
-        }
-
-    });
-
-    $("#submit").on("click", function hideQs(){
         if (!q1Ans){
             $("#Q1").hide();
             q1Ans = true;
@@ -246,7 +134,54 @@ $(document).ready(function(){
             startGame()
         }
     });
-
-startGame();
-
+    function checkAns(){
+        if(userAnswer==Ans1){
+            score = 10
+            console.log(score)
+        }
+        else if (userAnswer==Ans2){
+            score +=10
+            console.log(score)
+        }
+        else if (userAnswer==Ans3){
+            score +=10
+            console.log(score)
+        }
+        else if (userAnswer==Ans4){
+            score +=10
+            console.log(score)
+        }
+        else if (userAnswer==Ans5){
+            score +=10
+            console.log(score)
+        }
+        else if (userAnswer==Ans6){
+            score +=10
+            console.log(score)
+        }
+        else if (userAnswer==Ans7){
+            score +=10
+            console.log(score)
+        }
+        else if (userAnswer==Ans8){
+            score +=10        
+            console.log(score)    
+        }
+        else if (userAnswer==Ans9){
+            score +=10;
+            console.log(score)
+        }
+        else if(userAnswer==Ans10){
+            score+=10;
+            console.log(score)
+            
+        }
+        
+    };
+    startGame();
+    
+        
 });
+
+
+
