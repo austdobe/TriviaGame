@@ -21,7 +21,7 @@ var timerQ = 10;
 //answer timer
 var ARunning=false;
 var answer;
-var timerA = 3;
+var timerA = 2;
 
 $(document).ready(function(){
     // clear state of game to start fresh
@@ -39,7 +39,7 @@ $(document).ready(function(){
         q10Ans = true;
         score = 0;
         timerQ = 10
-        timerA = 3
+        timerA = 2
         $("#restart").hide()
         $("#Q1").show();
         $("#Q2").hide();
@@ -59,7 +59,6 @@ $(document).ready(function(){
             timerQ=10
             QRunning = true;
             question = setInterval(countDown, 1000);
-            console.log(score)
         }
     }
     //display question timer
@@ -78,12 +77,11 @@ $(document).ready(function(){
     function clearQ(){
         clearInterval(question)
         QRunning=false;
-        console.log("question4", timerQ)
     }
     //set answer display timer
     function answerT(){
         if (!ARunning) {
-            timerA=3
+            timerA=2
             ARunning = true;
             answer = setInterval(ansCount, 1000);
         }
@@ -91,7 +89,6 @@ $(document).ready(function(){
     //display answer timer
     function ansCount(){
         timerA--;
-        $("#display").html(timerA)
         //if answer timer hit 0 move to next question and remove class for wrong and right answers
         if(timerA === 0){
             qAns = false;
@@ -104,11 +101,9 @@ $(document).ready(function(){
     function clearA(){
         clearInterval(answer)
         ARunning=false;
-        console.log("answer4", timerA)
     }
     //option to restart game without refreshing screen
     $("#restart").on("click", function(){
-        removeAns()
         startGame()
         
     })
@@ -186,12 +181,9 @@ $(document).ready(function(){
         }
         else if (!q10Ans){
             q10Ans=true;
-            alert("You scored "+score+ "%")
+            $("#display").text("You scored "+score+ "%")
             $("#Q10").hide()
             $("#restart").show()
-            clearA()
-            clearQ()
-            removeAns()
             
         };
 }
